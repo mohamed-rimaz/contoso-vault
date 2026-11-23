@@ -13,26 +13,26 @@ ALPHABET_SIZE=26
 ciphertext = ""
 
 for character in message:
-    if character >= "A" and character <="Z":
+    if (character >= "A" and character <="Z") or(character >= "a" and character <="z"):
         shifted = ord(character) + key
-        if shifted > ord("Z"):
+        if (shifted > ord("Z")) or (shifted > ord("z")) :
             shifted -= ALPHABET_SIZE 
         ciphertext += chr(shifted)
     else:
         ciphertext += character
-print(ciphertext)
+print("THE CIPHERTEXT :",ciphertext)
 
 plain_text=""
 
 for character in ciphertext:
-    if character >= "A" and character <="Z":
+    if (character >= "A" and character <="Z") or (character >= "a" and character <="z") :
         shifted = ord(character) - key
-        if shifted < ord("A"):
+        if (shifted < ord("A")) or (shifted < ord("a")) :
             shifted += ALPHABET_SIZE 
         plain_text += chr(shifted)
     else:
         plain_text += character
-print(ciphertext)
+print("THE PLAIN TEXT :",plain_text)
 
 
 # message = "UPDATE"
