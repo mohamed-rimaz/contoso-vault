@@ -52,21 +52,22 @@ plain_text=""
 for character in ciphertext:
     # CAPITAL TEXT 
     if (character >= "A" and character <="Z"):
-        shifted = ord(character) - key
+        shifted :int = ord(character) - key
         
     # forward tracking the letter if its value less than 'A' ASCII , so this takes back value again to 'Z'
         if (shifted < ord("A")) :
             shifted += ALPHABET_SIZE 
-            plain_text += chr(shifted)
+        
+        plain_text += chr(shifted)
 
         # lower case conversion
 
     elif (character >= "a" and character <="z"):
-         shifted = ord(character) - key
+        shifted = ord(character) - key
        # forward tracking the letter if its value less than 'a' ASCII , so this takes back value again to 'z'
-         if (shifted < ord("a")) :
-            shifted += ALPHABET_SIZE 
-            plain_text += chr(shifted)
+        if (shifted < ord("a")) :
+            shifted += ALPHABET_SIZE
+        plain_text += chr(shifted)
  # conversion of the non alphabet text 
     else:
         plain_text += character
